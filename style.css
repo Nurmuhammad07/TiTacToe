@@ -1,0 +1,111 @@
+:root{
+    --winning-block: rgba(31, 56, 31, 0.331);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Permanent marker', cursive;
+}
+
+.container{
+    width: 50%;
+    height: 90%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transform: translate(-50%, -50%);
+}
+
+.h2{
+    position: absolute;
+    right: 10%;
+    font-size: 4vw;
+    font-weight: 500;
+}
+
+.h1{
+    text-align: center;
+    font-size: 7vw;
+    font-weight: 100;
+}
+
+.container .box{
+    width: 80%;
+    height: 60%;
+    grid-template-columns: 3fr;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container .box .item{
+    width: 33.33%;
+    height: 33.33%;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s all ease;
+}
+
+.container .box .item:nth-child(3n){
+    border-right: none;
+}
+
+.container .box .item:nth-child(6) ~ .item{
+    border-bottom: none;
+}
+
+.btn{
+    background: none;
+    border: 1px solid;
+    padding: 10px;
+    font-size: 25px;
+    transition: 0.2s all linear;
+}
+
+.btn:hover{
+    background: #000;
+    transition: 0.2s all linear;
+    color: #fff;
+    scale: 0.98;
+}
+
+.btn:active{
+    scale: 0.95;
+}
+
+@media (max-width:780px){
+    .h2{
+        transform: translate(50%);
+        right: 50%;
+        font-size: 40px;
+    }
+    .container{
+        height: 60%;
+    }
+}
+
+@media (max-width:450px){
+    .h2{
+        transform: translate(50%);
+        right: 50%;
+        font-size: 40px;
+    }
+
+    .container{
+        width: 80%;
+        height: 50%;
+    }
+
+    .container .h1{
+        font-size: 2.5em;
+    }
+}
